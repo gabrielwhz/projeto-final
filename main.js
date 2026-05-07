@@ -45,7 +45,7 @@ for (let rodadas = 1; rodadas <= 10 && jogador.moedas > 0; rodadas ++) {
         if (numerodasorte_sorteado == cartinha_sorteado) {
             console.log ("Você Ganhou a Rodada")
             let resultado = valoraposta_sorteado * 5
-            console.log ("Valor Ganho:", resultado)
+            console.log ("Valor Ganhado:", resultado)
             jogador.moedas = jogador.moedas + resultado
         }
         else {
@@ -61,7 +61,7 @@ for (let rodadas = 1; rodadas <= 10 && jogador.moedas > 0; rodadas ++) {
             if (numerodasorte_sorteado %2 == 0) {
                 console.log ("Você Ganhou a Rodada")
             let resultado = valoraposta_sorteado * 2
-            console.log ("Valor Ganho:", resultado)
+            console.log ("Valor Ganhado:", resultado)
             jogador.moedas = jogador.moedas + resultado
             }
             else {
@@ -78,7 +78,7 @@ for (let rodadas = 1; rodadas <= 10 && jogador.moedas > 0; rodadas ++) {
             if (numerodasorte_sorteado %2 !== 0) {
                 console.log ("Você Ganhou a Rodada")
             let resultado = valoraposta_sorteado * 2
-            console.log ("Valor Ganho:", resultado)
+            console.log ("Valor Ganhado:", resultado)
             jogador.moedas = jogador.moedas + resultado
             }
             else {

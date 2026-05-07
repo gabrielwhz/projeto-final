@@ -1,0 +1,29 @@
+- Explicação geral de como o programa funciona (Explicando funções, vetores, objetos e lógica):
+
+Nós criamos um sistema que se inicia com um objeto chamado jogador, que tem o nome do jogador e a quantidade de moedas que ele começa o jogo, no caso 100. Após isso temos a declaração de outras 4 variáveis, sendo elas: 
+
+"ValorAposta" - Variável que guarda os possíveis valores de moedas que o jogador pode usar por rodada, de 1 a 10 
+
+- "TipoAposta" - Variável que guarda os valores "Numero Exato" e "Par ou Impar", esses valores servem para decidir qual o tipo de aposta da rodada
+
+- "Cartinha" - Essa variável serve para armazenar os possíveis valores que o nosso sistema pode considerar como "chave" da vitória, sendo eles de 1 a 6 
+
+- "NumeroDaSorte" - Essa última serve para virar o número que o jogador recebe no sorteio, sendo o parâmetro de comparação
+
+O programa se inicia com um loop "for", que recebe a variável let rodadas = 1, e usa as condições rodadas <=10 e jogador.moedas > 0, além de usar rodadas++ para adicionar uma rodada por vez até chegar a décima.
+
+A primeira parte dentro do "for" funciona para escolher um valor aleatório dentro de cada uma das 4 arrays que foram declaradas no começo do programa. Eu fiz essa parte usando a função Math.floor. Eu criei duas novas versões pra cada uma das variáveis, sendo elas var_aleatorio e var_sorteado. Usando a função Math.floor e Math.random, além de usar também o .lenght, eu consegui sortear e imprimir um valor aletório para as 4 arryas inicias. Ou seja, temos o Valor da Aposta, o Tipo da Aposta, a "Carinha", e o Número da Sorte do usuário, todos definidos de forma aleatória no começo de cada uma das 10 rodadas.
+
+A segunda parte dentro do loop serve para verificar se o usuário ganhou ou perdeu a rodada, e também para atualizar o saldo do mesmo após o fim de cada uma das rodadas. Eu fiz esse sistema divido em 3 partes maiores com suas respectivas configurações "if":
+
+Eu configurei o primeiro "if" como (tipoaposta_sorteado == "Numero Exato"), essa primeira divisão serve para detectar se o tipo escolhido para nossa aposta foi o de tipo Numero Exato. A configuração de vitoria que eu fiz para essa seção funciona dizendo que se o "numerodasorte_sorteado" (numero que o jogador tirou no inicio da rodada) for igual ao "cartinha_sorteado" (numero que a "banca" sorteou para ser a condição) o console vai imprimir que o jogador ganhou a rodada, além disso também declarei a variavel let resultado = valoraposta_sorteado * 5 (variável resultado vira o valor que o jogo decidiu para a aposta, e caso ele ganhe o valor é multiplicado por 5), eu também imprimo o resultado da rodada no console, e por ultimo eu atualizo o valor jogador.moedas = jogador.moedas + resultado. A configuração para quando o jogador perde funciona de forma igual, mas o resultado não se multiplica por 5, ele apenas continua sendo o valor inicial da aposta, e no final a var jogador.moedas é atualizada para jogador.moedas - resultado.
+
+O segundo "if" funciona com a condição (tipoaposta_sorteado == "Par ou Impar"), essa segunda seção serve para validar se o tipo da aposta é de par ou impar, ela funciona verificando se "cartinha_sorteado" é igual a 2, 4 ou 6. Se for verdadeiro, o jogador ganha caso "numerodasorte_sorteado" %2 == 0 for verdade. Caso a condição seja verdadeira, aparece que o jogador ganhou, e o "valoraposta_sorteado" é multplicado por 2, além de jogador.moedas ser atualizado para jogador.moedas + resultado. Caso o "numero_sorteado %2 == 0" for falso, o sistema entende que o número é impar, o console imprime que o jogador perdeu, a let resultado continua sendo o valorapostsado_sorteado, e o jogador.moedas vira jogador.moedas - resultado.
+
+No ultimo "if", tudo funciona igual no segundo, mas a condição para "cartinha_sorteado" é igual a 1, 3 ou 6, e o jogador ganha se o "numero_sorteado" %2 !== 0, ou sejam se o número for impar.
+
+O resultado final é uma impressão console.log (jogador.moedas), que imprime o valor calculado durante todas as rodadas, e também um if (moedas<=0) {console.log ("Suas moedas acabaram")}.
+
+----------------
+
+Dificuldades Encontradas: Entender como a função Math.floor e Math.random funcionam, pois eu queria automatizar 100% a escolha aleatória do parâmetros
